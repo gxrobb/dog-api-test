@@ -6,8 +6,6 @@ const API_BASE = process.env.REACT_APP_API_BASE
 export default function DogsList() {
 
 	const [dogs, setDogs] = useState([]);
-	// let dogData = [];
-	// const [data, setData] = useState([]);
 
 	useEffect(() => {
 		fetch(`${API_BASE}/breeds/list/all`)

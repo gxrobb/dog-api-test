@@ -13,7 +13,7 @@ export default function DogCard({name}) {
 
 	return (
 		<section className='dogCard'>
-			<img src={url} className="dogCardImage" alt={name} height="200"/>
+			<img src={url} className="dogCardImage" alt={name}/>
 			<p>{name}</p>
 		</section>
 	)

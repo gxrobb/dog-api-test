@@ -1,20 +1,155 @@
+$breakpoint-mobile: 768px;
+
+
+//example of sass nesting
+header{
+  background-image: linear-gradient(to right, #7299A9 , #D0DDE1);
+  padding:1rem;
+
+  nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    h2{
+      margin:0;
+      color:white;
+    }
+    ul{
+      display:flex;
+      list-style:none;
+      margin:0;
+      padding:0;
+      li{
+        margin-right:1rem;
+        a{
+          color:black;
+        }
+      }
+    }
+  }
+
+  .heroSection{
+    margin-top:2rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    .loremIpsumWrapper{
+      flex: 0 0 40%;
+      h2{
+        font-size:1.5rem;
+      }
+      p{
+        font-size:.8rem;
+        line-height:1;
+      }
+    }
+    .youtubeWrapper{
+      flex: 0 0 40%;
+    }
+  }
+}
+
+//Youtube responsive video
+.videoResponsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+  iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+}
+
+//Dog Section
 h3{
   text-align: center;
 }
 
-//Dog Section
 .dogListWrapper{
   display: flex;
   flex-wrap: wrap;
   padding:1rem;
   justify-content: center;
+  text-transform: capitalize;
 }
 .dogCard{
   text-align:center;
   margin:1rem;
   border:solid 1px lightgray;
+  border-radius: 15px;
+  img{
+    height:200px;
+  }
+
 
 }
 .dogCardImage{
   border-bottom:none;
+}
+
+//helpers
+.hidden-desktop{
+  display:none;
+}
+
+
+@media (max-width: $breakpoint-mobile) {
+
+  .hidden-mobile{
+    display:none;
+  }
+
+  header{
+		nav{
+			flex-wrap:wrap;
+			justify-content: center;
+			h2{
+				text-align: center;
+				flex: 1 1 100%;
+			}
+			ul{
+				flex: 1 1 100%;
+				justify-content: center;
+				margin-top:.5rem;
+				li{
+					a{
+						text-decoration: none;
+					}
+				}
+			}
+		}
+
+    .heroSection{
+      margin-top:1rem;
+      flex-wrap:wrap;
+      .loremIpsumWrapper{
+        flex: 1 1 100%;
+        h2 {
+          text-align: center;
+        }
+      }
+      .youtubeWrapper{
+        margin-top:1rem;
+        flex: 1 1 100%;
+      }
+    }
+  }
+
+  .dogListWrapper{
+    flex-wrap: wrap;
+    justify-content: center;
+    padding:1rem;
+  }
+  
+  .dogCard{
+    img{
+      max-width:100%;
+      height:auto;
+    }
+  }
+
 }
