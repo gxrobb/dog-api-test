@@ -91,15 +91,16 @@ h3{
   border-bottom:none;
 }
 
-//helpers
-.hidden-desktop{
-  display:none;
-}
 
+@media (min-width: $breakpoint-mobile) {
+  .hiddenDesktop{
+    display:none;
+  }
+}
 
 @media (max-width: $breakpoint-mobile) {
 
-  .hidden-mobile{
+  .hiddenMobile{
     display:none;
   }
 
@@ -139,6 +140,10 @@ h3{
     }
   }
 
+  h3{
+    font-size:2rem;
+    margin-bottom:0;
+  }
   .dogListWrapper{
     flex-wrap: wrap;
     justify-content: center;
