@@ -8,9 +8,9 @@ export default function Header() {
 				<h2 className="hiddenMobile">Dog App</h2>
 				<h2 className="hiddenDesktop">Dog's R Us</h2>
 				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Contact</a></li>
+					<li><a href="/#">Home</a></li>
+					<li><a href="/#">About</a></li>
+					<li><a href="/#">Contact</a></li>
 				</ul>
 			</nav>
 			<section className="heroSection">

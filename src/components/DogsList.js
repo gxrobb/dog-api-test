@@ -8,13 +8,25 @@ export default function DogsList() {
 	const [dogs, setDogs] = useState([]);
 
 	useEffect(() => {
+		
 		fetch(`${API_BASE}/breeds/list/all`)
-			.then(res => res.json())
-			.then(json => setDogs(Object.keys(json.message)))
+			.then(async res => {
+				const json = await res.json();
+				if(!res.ok) {
+					const err = res.status
+					return Promise.reject(err)
+				} 
+
+				setDogs(Object.keys(json.message));
+				// console.log(dogs)
+			})
+			.catch(error => {
+					console.error('There was an error!', error);
+			});
 	}, [])
 
 	return (
-		<div class="dogList">
+		<div className="dogList">
 			<h3>Dog Breeds</h3>
 			<div className="dogListWrapper">
 				{ dogs.map(dog => {

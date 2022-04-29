@@ -5,10 +5,23 @@ export default function DogCard({name}) {
 
 	useEffect(() => {
 		const API_BASE = process.env.REACT_APP_API_BASE
-
+		
 		fetch(`${API_BASE}/breed/${name}/images/random`)
-			.then(res => res.json())
-			.then(json => setUrl(json.message))
+			.then(async res => {
+				const json = await res.json();
+
+				if(!res.ok) {
+					const err = res.status
+					return Promise.reject(err)
+				} 
+
+				setUrl(json.message)
+
+			})
+			.catch(error => {
+				console.error('There was an error!', error);
+			});
+
 	}, [])
 
 	return (
