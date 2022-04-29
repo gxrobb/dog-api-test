@@ -18,11 +18,12 @@ export default function DogsList() {
 				} 
 
 				setDogs(Object.keys(json.message));
-				// console.log(dogs)
+
 			})
 			.catch(error => {
 					console.error('There was an error!', error);
 			});
+			
 	}, [])
 
 	return (

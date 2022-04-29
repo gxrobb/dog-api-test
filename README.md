@@ -1,5 +1,5 @@
 ## Initial Setup
-copy the example.env file and rename it to .env in the root directory
+copy the example.env file and rename it to .env.local in the root directory
 
 ## Available Scripts
 
